@@ -3,6 +3,11 @@ const image = document.querySelector('.app__image');
 const title = document.querySelector('.app__title');
 const buttons = document.querySelectorAll('.app__card-button');
 let activeButton = document.querySelector('.app__card-button.active');
+const musicToggle = document.querySelector('#alternar-musica');
+const music = new Audio('/sons/luna-rise-part-one.mp3');
+music.loop = true;
+
+musicToggle.onchange = () => music.paused ? music.play() : music.pause();
 
 buttons.forEach((button) => {
   const parseClass = () => button.classList[1].split('--')[1];
